@@ -3,7 +3,7 @@ import { Board, BoardTiles, PieceType, Game, Coordinate, Color, Piece , Log } fr
 
 const app = require('express')()
 const http = require('http').createServer(app)
-const io = require('socket.io')(http, {
+const io = require('socket.io').listen(http, {
   cors: {
     origin: '*',
   },
