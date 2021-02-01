@@ -5,8 +5,7 @@ const app = require('express')()
 const http = require('http').createServer(app)
 const io = require('socket.io')(http, {
   cors:{
-    origin: ["http://localhost:3000", "https://wec-chess-client.herokuapp.com", "http://wec-chess-client.herokuapp.com"],    
-    methods: ["GET", "POST"]
+    origin: "*"
   },
 })
 
