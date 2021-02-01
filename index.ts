@@ -2,14 +2,13 @@ import { Board, BoardTiles, PieceType, Game, Coordinate, Color, Piece , Log } fr
 
 
 const app = require('express')()
-const http = require('http').createServer(app)
+const http = require('https').createServer(app)
 const io = require('socket.io')(http, {
   cors:{
     origin: ["http://localhost:3000", "https://wec-chess-client.herokuapp.com"],    
     methods: ["GET", "POST"]
   },
 })
-
 const ChessPiece = require('./piece');
 
 const PORT = process.env.PORT || 5000 
@@ -495,7 +494,5 @@ function createGame(size: number = 8){
     })
   })
 }
-
-
 
 http.listen(PORT, () => console.log(`Listening on port ${PORT}`))
