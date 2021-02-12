@@ -67,3 +67,12 @@ export interface Log {
   blackMoves: string[],
   whiteMoves: string[]
 }
+
+export interface User {
+  username: string,
+  socket: any
+}
+
+export interface GameEngine {
+  getGameInfo(): any
+}
